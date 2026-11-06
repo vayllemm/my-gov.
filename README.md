@@ -1,32 +1,71 @@
-# Demo Docs: static demonstration
+# Демо-просмотр документов
 
-A client-side mockup for displaying fictional sample documents. It is not connected to my.gov.uz or any government service. PIN checks and the decorative QR-like pattern are demonstrations only; they do not protect documents. Do not add real personal records or real PIN codes.
+Это демонстрационный статический сайт на HTML, CSS и JavaScript. Он не связан с my.gov.uz или государственными сервисами. Проверка PIN работает только в браузере и не защищает документы. Данные в примере вымышленные. Не добавляйте настоящие документы, личные данные или действующие PIN-коды.
 
-## Project details
+## Что входит в проект
 
-- Framework: none (plain HTML, CSS, and browser JavaScript)
-- Build command: none
-- Output directory: repository root (`.`)
-- Backend or environment variables: none
-- Local preview: open `index.html` in a browser
+- Фреймворк: не используется
+- Команда сборки: не требуется
+- Папка сайта: корень репозитория (`.`)
+- Серверная часть и переменные окружения: не нужны
+- Для просмотра на компьютере: откройте `index.html` в браузере
 
-All bundled data is fictional. Personal document files and the archive's original Git history were intentionally excluded from this clean public copy.
+Личные Word-документы и исходная Git-история исключены из этой чистой копии.
 
-## Publish with GitHub Pages
+## Публикация на GitHub Pages
 
-1. Create a **public** GitHub repository and do not initialize it with a README (this folder already contains one).
-2. From this folder, run:
+### 1. Создайте репозиторий GitHub
 
-   ```powershell
-   git init -b main
-   git add .
-   git commit -m "Prepare static demo"
-   git remote add origin https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
-   git push -u origin main
-   ```
+1. Войдите на [github.com](https://github.com).
+2. Нажмите `+` в правом верхнем углу и выберите **New repository**.
+3. Задайте имя, например `doc-pin-viewer-demo`.
+4. Выберите **Public**.
+5. Не отмечайте создание README, `.gitignore` или лицензии: эти файлы уже есть в проекте.
+6. Нажмите **Create repository**.
 
-3. On GitHub, open **Settings → Pages**.
-4. Under **Build and deployment**, choose **Deploy from a branch**, select `main` and `/(root)`, then save.
-5. GitHub will show the published address under **Settings → Pages**. Project site URLs use `https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/`.
+### 2. Загрузите файлы
 
-GitHub Pages publishes static files; this project needs no build step. Each later `git add`, `git commit`, and `git push` to `main` updates the site.
+Если вы используете подготовленную папку `doc-pin-viewer-public` из Codex, Git уже настроен и первый коммит создан. Откройте PowerShell в этой папке и выполните, заменив имя пользователя и репозитория на свои:
+
+```powershell
+git remote add origin https://github.com/ВАШЕ-ИМЯ/ИМЯ-РЕПОЗИТОРИЯ.git
+git push -u origin main
+```
+
+Если вы скачали ZIP и распаковали его в новую папку, откройте PowerShell в этой папке и сначала выполните:
+
+```powershell
+git init -b main
+git add .
+git commit -m "Первая версия демо-сайта"
+```
+
+Затем выполните команды `git remote add origin ...` и `git push -u origin main`, указанные выше.
+
+При запросе GitHub войдите в свой аккаунт в открывшемся окне авторизации. Не отправляйте пароль или код подтверждения в чат.
+
+### 3. Включите GitHub Pages
+
+1. Откройте репозиторий на GitHub и перейдите в **Settings → Pages**.
+2. В разделе **Build and deployment** выберите **Deploy from a branch**.
+3. Для ветки выберите `main`, для папки — `/(root)`, затем нажмите **Save**.
+4. После публикации адрес появится на этой странице. Обычно он имеет вид:
+   `https://ВАШЕ-ИМЯ.github.io/ИМЯ-РЕПОЗИТОРИЯ/`
+
+Публикация может занять несколько минут. GitHub Pages размещает статические файлы; сборка для этого проекта не нужна.
+
+## Как обновлять сайт
+
+После изменения файлов в папке проекта выполните:
+
+```powershell
+git add .
+git commit -m "Обновление сайта"
+git push
+```
+
+После отправки изменений GitHub Pages автоматически обновит сайт.
+
+## Важно
+
+Репозиторий и сайт будут публичными. Загружайте только эту демонстрационную копию. Не добавляйте реальные документы или личные сведения.
